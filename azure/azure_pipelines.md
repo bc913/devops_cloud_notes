@@ -192,5 +192,8 @@ https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands
 
 https://docs.microsoft.com/en-us/azure/devops/pipelines/scripts/logging-commands?view=azure-devops&tabs=bash#setvariable-initialize-or-modify-the-value-of-a-variable
 
+
+## Multi-staging
+- https://www.mercuryworks.com/blog/creating-a-multi-stage-pipeline-in-azure-devops/
 ## References
 https://adamtheautomator.com/powershell-pipeline/
