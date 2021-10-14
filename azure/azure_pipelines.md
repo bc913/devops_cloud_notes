@@ -94,6 +94,11 @@ steps:
 - [Predefined variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/build/variables?view=azure-devops&tabs=yaml)
 - [User defined variables](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch)
 
+### Scope
+User-defined variables can be defined and used at the same job, stage or pipeline(global) [scope](https://docs.microsoft.com/en-us/azure/devops/pipelines/process/variables?view=azure-devops&tabs=yaml%2Cbatch#variable-scopes).
+
+In order to share variable between different tasks, jobs or stages, the variables should be marked as `output` variable using `isoutput` syntax. Please refer to [this](#Define/Use/Share-output-variables-between-tasks/jobs/steps/stages) section for details.
+
 ### Access variables from script tasks
 Let's assume the following user-defined variables are available:
 
