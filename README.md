@@ -7,3 +7,4 @@ This repo consists of my notes & code snippets for the topics of `Devops` and `C
 ## Devops
 - [Versioning & Branching](devops/versioning.md)
 - [Packaging](devops/packaging.md)
+- [Code Coverage](devops/code_coverage.md)
