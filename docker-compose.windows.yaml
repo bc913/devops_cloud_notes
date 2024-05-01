@@ -1,0 +1,20 @@
+# Keep this file in the root directory
+version: '2.4'
+
+services:
+  # For C/Cpp cmake development
+  NativeVs2019:
+    image: mywin_image
+    build:
+      context: .
+      dockerfile: docker/win/Dockerfile # TODO: Update accordingly
+    volumes:
+      - ./: C:\src
+    working_dir: C:\src
+    environment:
+      - CONAN_USERNAME:
+      - CONAN_PASSWORD:
+      - BUILD_CONFIG:
+      - BUILD_PLATFORM:
+    command: powershell ./build.ps1 #TODO: Update accordingly 
+    # If v2 is used pass ./build.ps1 since powershell is already initiated

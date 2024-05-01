@@ -1,0 +1,94 @@
+{
+    "version": 6,
+    "cmakeMinimumRequired": {
+        "major": 3,
+        "minor": 25,
+        "patch": 0
+    },
+    "configurePresets": [
+        {
+            "name": "msvc_config_base",
+            "displayName": "msvc config base",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "installDir": "${sourceDir}/out/install/${presetName}"
+        },
+        {
+            "name": "msvc_vs2019",
+            "displayName": "msvc config",
+            "generator": "Visual Studio 16 2019",
+            "hidden": false,
+            "inherits" : "msvc_config_base",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "toolset": "v142,version=14.28",
+            "cacheVariables": {
+                "CMAKE_SYSTEM_VERSION": "10.0.18362.0"
+            }
+        },
+        {
+            "name": "msvc_vs2022",
+            "displayName": "msvc config",
+            "generator": "Visual Studio 17 2022",
+            "hidden": false,
+            "inherits" : "msvc_config_base",
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            },
+            "toolset": "v143,version=14.36",
+            "cacheVariables": {
+                "CMAKE_SYSTEM_VERSION": "10.0.20348.0"
+            }
+        },
+        {
+            "name": "ninja_multi_base",
+            "displayName": "Config ninja base preset",
+            "generator": "Ninja Multi-Config",
+            "hidden": true,
+            "binaryDir": "${sourceDir}/out/build/${presetName}",
+            "installDir": "${sourceDir}/out/install/${presetName}",
+            "architecture": {
+                "value": "x64",
+                "strategy": "external"
+            },
+            "toolset": {
+                "strategy": "external"
+            }
+        },
+        {
+            "name": "ninja_win",
+            "displayName": "Ninja Win Multi",
+            "inherits": "ninja_multi_base",
+            "hidden": false,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "cl",
+                "CMAKE_CXX_COMPILER": "cl"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Windows"
+            }
+        },
+        {
+            "name": "ninja_lnx",
+            "displayName": "Ninja Linux Multi",
+            "inherits": "ninja_multi_base",
+            "hidden": false,
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "gcc-11",
+                "CMAKE_CXX_COMPILER": "g++-11"
+            },
+            "condition": {
+                "type": "equals",
+                "lhs": "${hostSystemName}",
+                "rhs": "Linux"
+            }
+        }
+    ]
+}
