@@ -1,0 +1,64 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Build Mars",
+            "windows": {
+                "command": "${workspaceFolder}/c_api/build.bat"
+            },
+            "linux": {
+                "command": "${workspaceFolder}/c_api/build.sh"
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/c_api"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "Build Everything",
+            "windows": {
+                "command": "${workspaceFolder}/build-all.bat",
+            },
+            "linux": {
+                "command": "${workspaceFolder}/build-all.sh",
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "Run w/o debugging",
+            "windows": {
+                "command": "${workspaceFolder}/bin/mars.exe",
+            },
+            "linux": {
+                "command": "${workspaceFolder}/bin/mars",
+            },
+            "options": {
+                "cwd": "${workspaceFolder}/bin"
+            },
+            "group": {
+                "kind": "test",
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new",
+                "focus": true,
+                "revealProblems": "onProblem"
+            }
+        }
+    ],
+    "version": "2.0.0"
+}
