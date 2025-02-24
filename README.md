@@ -42,3 +42,5 @@ This repo consists of my notes & code snippets for the topics of `Devops` and `C
 ### Cloud
 - [Web Application with Authentication using AAD B2C & App Services](azure/cloud/WebApp_AAD_B2C_and_AppService.md)
 - [App Service](azure/cloud/AppService.md)
+- [Azure Container Apps w/ Azure CLI](azure/cloud/ContainerApps_AzureCLI.md)
+
