@@ -474,3 +474,5 @@ az group delete --name aca-demo
 - Build and deploy your FRONTEND app to Azure Container Apps
     - [Tutorial](https://learn.microsoft.com/en-us/azure/container-apps/communicate-between-microservices?tabs=bash&pivots=acr-remote)
     - [Github](https://github.com/Azure-Samples/containerapps-albumui/tree/main)
+- [Deploy cloud-native apps using Azure Container Apps Microsoft Learn - Training Module](https://learn.microsoft.com/en-us/training/paths/deploy-cloud-native-applications-to-azure-container-apps/)
+- [Azure Container Apps - QuickStart](https://hexmaster.nl/posts/azure-container-apps-quickstart/)
