@@ -35,6 +35,8 @@ This repo consists of my notes & code snippets for the topics of `Devops` and `C
 
 
 ## Azure
+- [Github Azure/azure-quickstart-templates](https://github.com/Azure/azure-quickstart-templates)
+- [Sample Code from Microsoft Developer Tools](https://learn.microsoft.com/en-us/samples/browse/?expanded=azure&products=azure-resource-manager)
 ### Devops
 - [Azure Pipelines](azure/devops/azure_pipelines.md)
 - [Deployment & Publishing Packages](azure/devops/deployment_publishing_packages.md)
