@@ -476,3 +476,4 @@ az group delete --name aca-demo
     - [Github](https://github.com/Azure-Samples/containerapps-albumui/tree/main)
 - [Deploy cloud-native apps using Azure Container Apps Microsoft Learn - Training Module](https://learn.microsoft.com/en-us/training/paths/deploy-cloud-native-applications-to-azure-container-apps/)
 - [Azure Container Apps - QuickStart](https://hexmaster.nl/posts/azure-container-apps-quickstart/)
+- [Java Dapr Workshop for Azure Kubernetes Service and Azure Container Apps](https://azure.github.io/java-aks-aca-dapr-workshop/)
