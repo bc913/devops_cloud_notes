@@ -30,22 +30,6 @@
             }
         },
         {
-            "name": "msvc_vs2022",
-            "displayName": "msvc config",
-            "generator": "Visual Studio 17 2022",
-            "hidden": false,
-            "inherits" : "msvc_config_base",
-            "condition": {
-                "type": "equals",
-                "lhs": "${hostSystemName}",
-                "rhs": "Windows"
-            },
-            "toolset": "v143,version=14.36",
-            "cacheVariables": {
-                "CMAKE_SYSTEM_VERSION": "10.0.20348.0"
-            }
-        },
-        {
             "name": "ninja_multi_base",
             "displayName": "Config ninja base preset",
             "generator": "Ninja Multi-Config",
