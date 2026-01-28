@@ -45,6 +45,61 @@ This is a huge topic and I try to compile some of the benefical resources as fol
 - [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
 - [A successful Git branching model](https://nvie.com/posts/a-successful-git-branching-model/)
 
+## Nerdbank Git-Versioning Usage
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/dotnet/Nerdbank.GitVersioning/master/src/NerdBank.GitVersioning/version.schema.json",
+  "version": "0.4-alpha",
+  "assemblyVersion": {
+    "precision": "revision"
+  },
+  "publicReleaseRefSpec": [
+    "^refs/heads/master$",
+    "^refs/heads/develop$",
+    "^refs/heads/release/v\\d+(?:\\.\\d+)?$",
+    "^refs/tags/v\\d+\\.\\d+"
+  ],
+  "cloudBuild": {
+    "buildNumber": {
+      "enabled": true
+    }
+  },
+  "release": {
+    "branchName": "release/v{version}",
+    "tagName" : "v{version}",
+    "versionIncrement" : "minor",
+    "firstUnstableTag": "alpha"
+  }
+}
+```
+
+- Policies:
+    - Use `feature` or `hotfix` branches for regular development. If a package required on these branches, just run to get `nbgv get-version` to see the version.
+    ```cmd
+    Version:                      0.5.2.8457
+    AssemblyVersion:              0.5.2.8457
+    AssemblyInformationalVersion: 0.5.2-alpha+21092ec5b5
+    NpmPackageVersion:            0.5.2-alpha.g21092ec5b5
+    ```
+
+    - After the corresponding `feature` or `hotfix` branches merged into `develop`, you can still create packages and version on develop. `nbgv get-version` will generate the following.
+    ```cmd
+    AssemblyVersion:              0.5.3.21671
+    AssemblyInformationalVersion: 0.5.3-alpha+54a7a0c483
+    NuGetPackageVersion:          0.5.3-alpha
+    NpmPackageVersion:            0.5.3-alpha
+    ```
+    - To generate a public release, run `nbgv prepare-release` on `develop` branch. This will generate `release/v{version}` branch and increase the version accordingly based on `versionIncrement` value and merge it to back to develop. `nbgv get-version` will generate the following on `release/v{version}` branch.
+    ```cmd
+    AssemblyVersion:              0.5.8.16502
+    AssemblyInformationalVersion: 0.5.8+40760002e6
+    NuGetPackageVersion:          0.5.8
+    NpmPackageVersion:            0.5.8
+    ```
+    - For next release, start working on updated `develop` branch. For the current release, start working on `release/v{version}` branch by branching off **ONLY** for bug fixes. No further feature development on current release.
+    - Bug fixes from rel. branch may be continously merged back into `develop`.
+
+
 ## Tools
 There are several tools to combine good branching and versioning practices.
 - [GitVersion]
